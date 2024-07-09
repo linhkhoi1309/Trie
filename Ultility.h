@@ -2,6 +2,8 @@
 #include <vector>
 #include <fstream>
 #include <string>
+#include <algorithm>
+#include "Trie.h"
 using namespace std;
 
 vector<char> readFile(string fileName);

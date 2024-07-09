@@ -43,6 +43,19 @@ void Trie::insertKey(string key)
     cur->wordEnd = 1;
 }
 
+void deleteNodes(TrieNode *root)
+{
+    if (root)
+    {
+        for (int i = 0; i < 26; i++)
+        {
+            deleteNodes(root->children[i]);
+        }
+        delete root;
+    }
+}
+
 Trie::~Trie()
 {
+    deleteNodes(root);
 }

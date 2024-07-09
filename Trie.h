@@ -22,3 +22,5 @@ struct Trie
     void insertKey(string key);
     ~Trie();
 };
+
+void deleteNodes(TrieNode* root);
