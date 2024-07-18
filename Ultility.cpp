@@ -5,9 +5,14 @@ vector<char> input()
 {
     char c;
     vector<char> listOfChars;
-    while (cin >> c)
+    string input;
+    getline(cin, input);
+    for (char ch : input)
     {
-        listOfChars.push_back(c);
+        if (isalpha(ch))
+        {
+            listOfChars.push_back(ch);
+        }
     }
     return listOfChars;
 }
@@ -18,9 +23,7 @@ void backtrack(TrieNode *node, string path, int charCount[], vector<char> &listO
     {
         vector<string>::iterator it = find(listOfWords.begin(), listOfWords.end(), path);
         if (it == listOfWords.end())
-        {
             listOfWords.push_back(path);
-        }
     }
     for (int i = 0; i < 26; i++)
     {
@@ -47,9 +50,6 @@ void generateWords(Trie &trie, vector<char> &listOfChars, vector<string> &listOf
 void output(vector<string> listOfWords)
 {
     cout << listOfWords.size() << '\n';
-
     for (int i = 0; i < listOfWords.size(); i++)
-    {
         cout << listOfWords[i] << '\n';
-    }
 }

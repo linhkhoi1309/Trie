@@ -11,12 +11,12 @@ int main()
     trie.initTrie("Dic.txt");
 
     // Read a list of characters from the input file
-    listOfChars = readFile("input.txt");
+    listOfChars = input();
 
     // Generate words from the provided characters
     generateWords(trie, listOfChars, listOfWords);
 
     // Write a list of generated words to the output file
-    writeFile("output.txt", listOfWords);
+    output(listOfWords);
     return 0;
 }
