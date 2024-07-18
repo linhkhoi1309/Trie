@@ -1,6 +1,5 @@
 #pragma once
 #include <string>
-#include <vector>
 #include <fstream>
 using namespace std;
 
@@ -23,4 +22,4 @@ struct Trie
     ~Trie();
 };
 
-void deleteNodes(TrieNode* root);
+void deleteNodes(TrieNode*& root);

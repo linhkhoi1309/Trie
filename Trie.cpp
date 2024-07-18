@@ -19,9 +19,8 @@ void Trie::initTrie(string fileName)
 
     string word;
 
-    while (!fIn.eof())
+    while (fIn >> word)
     {
-        fIn >> word;
         insertKey(word);
     }
 
@@ -43,7 +42,7 @@ void Trie::insertKey(string key)
     cur->wordEnd = 1;
 }
 
-void deleteNodes(TrieNode *root)
+void deleteNodes(TrieNode *&root)
 {
     if (root)
     {
@@ -53,6 +52,7 @@ void deleteNodes(TrieNode *root)
         }
         delete root;
     }
+    root = nullptr;
 }
 
 Trie::~Trie()
